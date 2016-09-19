@@ -1,0 +1,21 @@
+<!-- views/signin.handlebars -->
+ <div class="row login">
+    <div class="col s10 offset-s1">
+      <form id="local-sign-in" action="/users/session" method="post">
+        <input type="hidden" name="_csrf" value="{{csrf_token}}">
+        <p class="error">{{message}}</p>
+        <div>
+            <p></p>
+            <label>Equipe:</label>
+            <input type="text" name="email"/>
+        </div>
+        <div>
+            <label>Password:</label>
+            <input type="password" name="password"/>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-primary btn-sm" value="Log In"/>
+        </div>
+      </form>
+    </div>
+</div>

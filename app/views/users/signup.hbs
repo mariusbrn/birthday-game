@@ -1,0 +1,28 @@
+<!-- views/signin.handlebars -->
+<div class="jumbotron">
+  <h3>Creation de compte</h3>
+
+  <form class="form-signin" action="/users" method="post">
+    <input type="hidden" name="_csrf" value="{{csrf_token}}">
+    <p>{{message}}</p>
+    <div>
+        <label>USERNAME:</label>
+        <input type="text" name="email" value="{{user.email}}"/>
+    </div>
+    <div>
+        <label>NAME:</label>
+        <input type="text" name="name" value="{{user.name}}"/>
+    </div>    
+    <div>
+        <label>PASSWORD:</label>
+        <input type="password" name="password"/>
+    </div>
+    <div>
+        <label>ETAPES:</label>
+        <input type="text" name="steps" value="{{user.steps}}"/>
+    </div>      
+    <div>
+        <input type="submit" class="btn btn-primary btn-sm" value="SAVE"/>
+    </div>
+  </form>
+</div>

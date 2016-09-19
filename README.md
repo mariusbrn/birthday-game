@@ -1,1 +1,5 @@
-# birthday-game
+## birthday-game
+
+## License
+
+MIT
