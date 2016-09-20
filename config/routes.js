@@ -29,6 +29,7 @@ module.exports = function (app, passport) {
   app.get('/signup', users.signup);
   app.get('/logout', users.logout);
   app.post('/users', users.create);
+  app.get('/users', users.findAll);
   app.post('/users/session',
     pauth('local', {
       failureRedirect: '/login',

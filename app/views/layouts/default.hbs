@@ -27,7 +27,7 @@
         {{#if req.user}}
         <a href="#" class="brand-logo center">{{req.user.name}}</a>
         <ul id="nav-mobile" class="left">
-          <li><a href="badges.html"><i class="fa fa-bar-chart fa-2x"></i></a></li>
+          <li><a id="chartBtn"><i class="fa fa-bar-chart fa-2x"></i></a></li>
         </ul>
         <ul id="nav-mobile" class="left">
           <li>{{req.user.points}}pts</li>
@@ -44,12 +44,10 @@
 
     <div class="container">
     {{> message}}
-    
-
-    {{{body}}}
+    {{> chart}}
 
     <!--where our other templates will insert-->
-
+    {{{body}}}
 
     </div> <!-- /container -->
 

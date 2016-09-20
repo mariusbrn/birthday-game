@@ -45,12 +45,41 @@ $(function() {
   });
 
   function sendAnswer(answer, cb) {
-  $.ajax({
-    url: answerCheckUrl,
-    method: 'POST',
-    dataType: 'json',
-    data: { answer: answer, _csrf: token }
-  })
-  .done(cb);     
-}
+    $.ajax({
+      url: answerCheckUrl,
+      method: 'POST',
+      dataType: 'json',
+      data: { answer: answer, _csrf: token }
+    })
+    .done(cb);     
+  }
+
+  // CHART
+  $( "#chartBtn" ).click(function( e ) {
+    e.preventDefault();
+    $('#modalChart').openModal();
+
+    $.ajax({
+      url: '/users',
+      method: 'GET',
+      dataType: 'json'
+    })
+    .done(function( data ) {
+      if (data.success) {
+        data.teams.forEach(function (team) {
+          var row = [
+            '<tr>',
+            '<td>' + team.name + '</td>',
+            '<td>' + team.points + 'pts</td>',
+            '<td>' + team.progress + '%</td>',
+            '</tr>'
+          ].join();
+          $('chart > tbody:last-child').append(row);
+        });
+        $('#chartProgress').hide();
+      } else {
+        $('.chartError').show();
+      }
+    });
+  });  
 });

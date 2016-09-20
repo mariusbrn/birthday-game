@@ -78,6 +78,37 @@ exports.create = async(function* (req, res) {
 // });
 
 /**
+ * Find all users
+ */
+
+exports.findAll = async(function* (req, res){
+  const user = req.user;
+  try {
+    
+    let users = yield Enigm.find( {}, {point: 1, enigms: 1});
+    users = _.remove(users, {name: 'admin'});
+    users.map(function (user) {
+      let enigmDone = _.filter(user.enigms, {done: true});
+      user.progress = ((user.enigms.length / 100) * enigmDone.length).toPrecision(4);
+      return user;
+    })
+
+    let resObj = { 
+      teams: users,
+      success: true 
+    };
+
+    respond(res, null, resObj, 200);
+  } catch (err) {
+    respond(res, 'user/edit', {
+      title: 'Edit ' + article.name,
+      errors: ['Error'],
+      user
+    }, 422);
+  }
+});
+
+/**
  * Answer enigm
  */
 
