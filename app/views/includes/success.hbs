@@ -1,0 +1,13 @@
+ <div id="modalSuccess" class="modal blue-grey darken-1">
+  <div class="modal-content white-text center-align">
+    <h3>Bonne réponse !</h3>
+    {{#if question.answerImg}}
+    <div>
+      <img class="responsive-img" src="/img/{{ question.answerImg }}">
+    </div>
+    {{/if}}
+    <div>
+      <a class="waves-effect waves-light btn-large btn-close">SUITE</a>
+    </div>
+  </div>
+</div>

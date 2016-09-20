@@ -1,4 +1,4 @@
-$(function ($, window) {
+$(function () {
 
   // CODE
   $('#codeForm').submit(function (e) {
@@ -25,7 +25,13 @@ $(function ($, window) {
     var answer = el.text();
     sendAnswer(answer, function (data){
       if (data.success) {
-        window.location = redirectAnswerUrl + data.next;  
+        $('#modalSuccess').openModal({
+          dismissible: false,
+          opacity: .5
+        });
+         $('#modalSuccess .btn-close').click(function () {
+            window.location = redirectAnswerUrl + data.next;  
+         });
       } else {
         el.addClass('red');
       }
@@ -37,7 +43,13 @@ $(function ($, window) {
     var formDatas = $(this).serializeArray();
     sendAnswer(formDatas[1].value, function (data) {
       if (data.success) {
-        window.location = redirectAnswerUrl + data.next;  
+        $('#modalSuccess').openModal({
+          dismissible: false,
+          opacity: .5
+        });
+         $('#modalSuccess .btn-close').click(function () {
+            window.location = redirectAnswerUrl + data.next;  
+         });
       } else {
         $('.answerError').show();
       }

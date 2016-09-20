@@ -166,7 +166,8 @@ db.questions.insert([
       'Aucune d\'entre elles' 
     ],
     img:'tronche.jpg',     
-    answer: 'baronne marianne von brandstetter'
+    answer: 'baronne marianne von brandstetter',
+    answerImg:'tronche.jpg'
   }, {
     id: 2, 
     type: 'choice', 

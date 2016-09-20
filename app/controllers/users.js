@@ -191,15 +191,15 @@ exports.question = async(function* (req, res){
     let questionIndex = _.findIndex(user.questions, { id: questionId });
     let userQuestion = user.questions[questionIndex];
 
-    if (userQuestion.done) {
-      resObj.success = true;
-    } else if (question.answer === answer) {
-      let coeff = 5 - userQuestion.attempt;
-      if (coeff < 0) coeff = 0; 
-      let points = 10 * coeff;
-      user.points += points;
-      userQuestion.done = true; 
-      userQuestion.date = new Date();     
+    if (question.answer === answer) {
+      if (!userQuestion.done) {
+        let coeff = 5 - userQuestion.attempt;
+        if (coeff < 0) coeff = 0; 
+        let points = 10 * coeff;
+        user.points += points;
+        userQuestion.done = true; 
+        userQuestion.date = new Date();     
+      }  
       resObj.success = true;
       resObj.next = user.currentStep;
     } else {
