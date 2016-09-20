@@ -62,3 +62,18 @@ body {
   text-align: center;
   display: none;
 }
+
+.login {
+  margin-top: 200px;
+}
+
+.hint span {
+  letter-spacing: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.chart .me {
+  color: #00e5ff;
+}

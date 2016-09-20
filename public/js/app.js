@@ -1,7 +1,7 @@
-$(function() {
+$(function ($, window) {
 
   // CODE
-  $( "#codeForm" ).submit(function( e ) {
+  $('#codeForm').submit(function (e) {
     e.preventDefault();
     $.ajax({
       url: codeUrl,
@@ -9,7 +9,7 @@ $(function() {
       dataType: 'json',
       data: $(this).serializeArray()
     })
-    .done(function( data ) {
+    .done(function (data) {
       if (data.success) {
         window.location = redirectCodeUrl + data.hash;  
       } else {
@@ -19,7 +19,7 @@ $(function() {
   });
 
   // ANSWER
-  $( ".btn-choice" ).click(function( e ) {
+  $('.btn-choice').click(function (e) {
     e.preventDefault();
     const el = $(this);
     var answer = el.text();
@@ -32,7 +32,7 @@ $(function() {
     });
   });    
 
-  $( "#answerForm" ).submit(function( e ) {
+  $('#answerForm').submit(function (e) {
     e.preventDefault();
     var formDatas = $(this).serializeArray();
     sendAnswer(formDatas[1].value, function (data) {
@@ -44,7 +44,7 @@ $(function() {
     });
   });
 
-  function sendAnswer(answer, cb) {
+  function sendAnswer (answer, cb) {
     $.ajax({
       url: answerCheckUrl,
       method: 'POST',
@@ -55,7 +55,7 @@ $(function() {
   }
 
   // CHART
-  $( "#chartBtn" ).click(function( e ) {
+  $('#chartBtn').click(function (e) {
     e.preventDefault();
     $('#modalChart').openModal();
 
@@ -64,18 +64,20 @@ $(function() {
       method: 'GET',
       dataType: 'json'
     })
-    .done(function( data ) {
+    .done(function (data) {
       if (data.success) {
-        data.teams.forEach(function (team) {
-          var row = [
-            '<tr>',
-            '<td>' + team.name + '</td>',
-            '<td>' + team.points + 'pts</td>',
-            '<td>' + team.progress + '%</td>',
+        var rows = '';
+        for (var i = 0; i < data.teams.length; i++) {
+          var myself = (data.user.name === data.teams[i].name);
+          rows += [
+            '<tr' + (myself ? ' class="me"' : '') + '>',
+            '<td>' + data.teams[i].name + '</td>',
+            '<td>' + data.teams[i].points + 'pts</td>',
+            '<td>' + data.teams[i].progress + '%</td>',
             '</tr>'
           ].join();
-          $('chart > tbody:last-child').append(row);
-        });
+        }
+        $('#chart > tbody:last-child').html(rows);
         $('#chartProgress').hide();
       } else {
         $('.chartError').show();

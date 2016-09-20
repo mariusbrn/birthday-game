@@ -19,6 +19,7 @@ var UserSchema = new Schema({
   salt: { type: String, default: '' },
   currentStep: { type: Number, default: 0 },
   points: { type: Number, default: 0 },
+  progress: { type: Number, default: 0 },
   enigms: [],
   questions: []
 });

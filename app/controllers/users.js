@@ -85,23 +85,24 @@ exports.findAll = async(function* (req, res){
   const user = req.user;
   try {
     
-    let users = yield Enigm.find( {}, {point: 1, enigms: 1});
-    users = _.remove(users, {name: 'admin'});
-    users.map(function (user) {
-      let enigmDone = _.filter(user.enigms, {done: true});
-      user.progress = ((user.enigms.length / 100) * enigmDone.length).toPrecision(4);
-      return user;
-    })
+    let users = yield User.find( {}, { name: 1, teamname: 1, points: 1, enigms: 1, _id: 0 });
+    _.remove(users, { name: 'admin' });
+    users.forEach(function (user) {
+      let enigmDone = _.filter(user.enigms, { done: true });
+      console.log((user.enigms.length / 100) * enigmDone.length, Math.round((user.enigms.length / 100) * enigmDone.length));
+      user.progress = Math.round((100 / user.enigms.length) * enigmDone.length);
+    });
 
-    let resObj = { 
+    let resObj = {
       teams: users,
-      success: true 
+      success: true,
+      user
     };
 
     respond(res, null, resObj, 200);
   } catch (err) {
-    respond(res, 'user/edit', {
-      title: 'Edit ' + article.name,
+    console.log(err);
+    respond(res, null, {
       errors: ['Error'],
       user
     }, 422);
@@ -124,7 +125,7 @@ exports.enigm = async(function* (req, res){
     }
 
     const step = enigm.id; 
-    let enigmIndex = _.findIndex(user.enigms, {id: enigm.id});
+    let enigmIndex = _.findIndex(user.enigms, { id: enigm.id });
 
     if (step < user.currentStep) {
       resObj.errors = ['Etape déjà enregistrée'];
@@ -154,8 +155,7 @@ exports.enigm = async(function* (req, res){
         user
       }, 200);
     } catch (err) {
-      respond(res, 'empty', {
-        title: 'Edit ' + article.name,
+      respond(res, null, {
         errors: ['Error'],
         user
       }, 422);
@@ -188,7 +188,7 @@ exports.question = async(function* (req, res){
     let answer = req.body.answer;
     answer = answer.toLowerCase();
 
-    let questionIndex = _.findIndex(user.questions, {id: questionId});
+    let questionIndex = _.findIndex(user.questions, { id: questionId });
     let userQuestion = user.questions[questionIndex];
 
     if (userQuestion.done) {
