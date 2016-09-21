@@ -17,7 +17,7 @@ module.exports = new LocalStrategy({
   },
   function (email, password, done) {
     var options = {
-      criteria: { email: email }
+      criteria: { email: email.toLowerCase() }
     };
     User.load(options, function (err, user) {
       if (err) return done(err);

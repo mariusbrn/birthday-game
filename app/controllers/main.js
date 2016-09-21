@@ -4,7 +4,6 @@
  */
 const mongoose = require('mongoose');
 const { wrap: async } = require('co');
-const _ = require('lodash');
 const { respond } = require('../utils');
 const Question = mongoose.model('Question');
 
@@ -45,7 +44,7 @@ exports.question = async(function* (req, res) {
       question
     });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     respond(res, null, {
       errors: ['Error'],
       user

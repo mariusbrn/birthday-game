@@ -124,15 +124,14 @@ exports.enigm = async(function* (req, res){
       return respond(res, null, resObj, 404);
     }
 
-    const step = enigm.id; 
     let enigmIndex = _.findIndex(user.enigms, { id: enigm.id });
 
-    if (step < user.currentStep) {
+    if (enigmIndex < user.currentStep) {
       resObj.errors = ['Etape déjà enregistrée'];
       return respond(res, 'home/empty', resObj, 200);
     }
 
-    if (step > user.currentStep) {
+    if (enigmIndex > user.currentStep) {
       resObj.errors = ['Ce n\'est pas la bonne etape'];
       return respond(res, 'home/empty', resObj, 200);
     }
@@ -142,7 +141,7 @@ exports.enigm = async(function* (req, res){
 
     let userEnigm = user.enigms[enigmIndex];
     userEnigm.done = true;
-    userEnigm.date = new Date();
+    userEnigm.date = Date.now();   
     user.enigms[enigmIndex] = userEnigm;
     user.markModified('enigms');
 
@@ -198,7 +197,7 @@ exports.question = async(function* (req, res){
         let points = 10 * coeff;
         user.points += points;
         userQuestion.done = true; 
-        userQuestion.date = new Date();     
+        userQuestion.date = Date.now();    
       }  
       resObj.success = true;
       resObj.next = user.currentStep;

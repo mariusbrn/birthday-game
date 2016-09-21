@@ -4,10 +4,33 @@
 	  <div class="card blue-grey darken-1">
 	    <div class="card-content white-text">
 	      <span class="card-title">Félicitation !!</span>
-	      <p>Vous êtes moins bête qu'il n'y paraît</p>
+				{{#switch next.id}}
+				  {{#case 1}}
+				    <p>C'est que tu ne réfléchis pas qu'avec tes pieds!</p>
+				  {{/case}}
+				  {{#case 2}}
+				    <p>Tu es moins bête qu'il n'y paraît.</p>
+				  {{/case}}
+				  {{#case 3}}
+				    <p>Tu es moins bête qu'il n'y paraît.</p>
+				  {{/case}}
+				  {{#case 4}}
+				    <p>Tu es moins bête qu'il n'y paraît.</p>
+				  {{/case}}
+				  {{#case 5}}
+				    <p>Tu es moins bête qu'il n'y paraît.</p>
+				  {{/case}}				  				  				  
+				{{/switch}} 
 	      <br>
 	      <div class="center-align">
-	      	<img class="responsive-img" src="/img/thumb_up_2.jpg">
+					{{#switch next.id}}
+					  {{#case 1 2 3 4 5 6}}
+					    <img class="responsive-img" src="/img/congrats.jpg">
+					  {{/case}}
+					  {{#case 7}}
+					    <img class="responsive-img" src="/img/congrats-final.jpg">
+					  {{/case}}			  				  				  
+					{{/switch}} 	      
 	      </div>
 	      <p></p>
 	      <br>

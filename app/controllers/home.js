@@ -4,14 +4,13 @@
  */
 
 exports.index = function (req, res) {
-  if(req.user.currentStep !== 0) {
-    const curQuestion = req.user.questions[req.user.currentStep]
-    if (!curQuestion) {
-      res.redirect('/end');
-    } else if (curQuestion.done) {
-      res.redirect('/etape/' + (req.user.currentStep));
+  if (req.user.currentStep !== 0) {
+    const lastQuestion = req.user.questions[req.user.currentStep - 1];
+
+    if (lastQuestion.done) {
+      res.redirect('/etape/' + req.user.currentStep);
     } else {
-      res.redirect('/question/' + (curQuestion.id));
+      res.redirect('/question/' + lastQuestion.id);
     }
   } else {
     res.render('home/index', {
