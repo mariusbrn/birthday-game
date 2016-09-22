@@ -252,9 +252,9 @@ db.questions.insert([
 // Enigme
 db.enigms.insert([
   {id: 0, code: '000', hash: 'drtympe'},
-  {id: 1, code: '111', hash: 'zbbyyxv'},
-  {id: 2, code: '222', hash: 'crtbhrn'},
-  {id: 3, code: '333', hash: 'uolnrds'},
-  {id: 4, code: '444', hash: 'advnmpl'},
-  {id: 5, code: '555', hash: 'xeztyhj'},
-  {id: 6, code: '555', hash: 'feznivo'}]);
+  {id: 1, code: '145', hash: 'zbbyyxv'},
+  {id: 2, code: '752', hash: 'crtbhrn'},
+  {id: 3, code: '354', hash: 'uolnrds'},
+  {id: 4, code: '785', hash: 'advnmpl'},
+  {id: 5, code: '936', hash: 'xeztyhj'},
+  {id: 6, code: '862', hash: 'feznivo'}]);
