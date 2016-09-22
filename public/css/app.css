@@ -83,3 +83,11 @@ body {
   font-weight: bold;
   text-align: center;
 }
+
+.card .card-title {
+  font-size: 18px;
+}
+
+.btn-choice {
+  font-size: 12px;
+}

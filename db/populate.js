@@ -14,17 +14,17 @@ db.users.insert([{
     enigms : [
       {id: 0, done: false},
       {id: 1, done: false},
-      {id: 4, done: false},
       {id: 2, done: false},
       {id: 3, done: false},
+      {id: 4, done: false},
       {id: 5, done: false},
       {id: 6, done: false}
     ],
     questions : [
       {id: 1, attempt: 0, done: false},
-      {id: 4, attempt: 0, done: false},
       {id: 2, attempt: 0, done: false},
       {id: 3, attempt: 0, done: false},
+      {id: 4, attempt: 0, done: false},
       {id: 5, attempt: 0, done: false},
       {id: 6, attempt: 0, done: false},
       {id: 7, attempt: 0, done: false}
@@ -39,11 +39,11 @@ db.users.insert([{
     name : "equipe 2",
     enigms : [
       {id: 0, done: false},
-      {id: 1, done: false},
-      {id: 4, done: false},
       {id: 2, done: false},
       {id: 3, done: false},
+      {id: 4, done: false},
       {id: 5, done: false},
+      {id: 1, done: false},
       {id: 6, done: false}
     ],
     questions : [
@@ -65,11 +65,11 @@ db.users.insert([{
     name : "equipe 3",
     enigms : [
       {id: 0, done: false},
-      {id: 1, done: false},
-      {id: 4, done: false},
-      {id: 2, done: false},
       {id: 3, done: false},
+      {id: 4, done: false},
       {id: 5, done: false},
+      {id: 1, done: false},
+      {id: 2, done: false},
       {id: 6, done: false}
     ],
     questions : [
@@ -91,11 +91,11 @@ db.users.insert([{
     name : "equipe 4",
     enigms : [
       {id: 0, done: false},
-      {id: 1, done: false},
-      {id: 4, done: false},
-      {id: 2, done: false},
-      {id: 3, done: false},
       {id: 5, done: false},
+      {id: 4, done: false},
+      {id: 3, done: false},
+      {id: 2, done: false},
+      {id: 1, done: false},
       {id: 6, done: false}
     ],
     questions : [
@@ -110,32 +110,32 @@ db.users.insert([{
     currentStep : 0, 
     points : 0   
   }, {
-    salt : "965644650821", 
-    hashed_password : "ec0f6662208661f523c541bec300b0c6f5a45bea", 
-    email : "equipe5", 
-    teamname : "", 
-    name : "equipe 5",
-    enigms : [
-      {id: 0, done: false},
-      {id: 1, done: false},
-      {id: 4, done: false},
-      {id: 2, done: false},
-      {id: 3, done: false},
-      {id: 5, done: false},
-      {id: 6, done: false}
-    ],
-    questions : [
-      {id: 1, attempt: 0, done: false},
-      {id: 4, attempt: 0, done: false},
-      {id: 2, attempt: 0, done: false},
-      {id: 3, attempt: 0, done: false},
-      {id: 5, attempt: 0, done: false},
-      {id: 6, attempt: 0, done: false},
-      {id: 7, attempt: 0, done: false}
-    ],   
-    currentStep : 0, 
-    points : 0   
-  }, { 
+  //   salt : "965644650821", 
+  //   hashed_password : "ec0f6662208661f523c541bec300b0c6f5a45bea", 
+  //   email : "equipe5", 
+  //   teamname : "", 
+  //   name : "equipe 5",
+  //   enigms : [
+  //     {id: 0, done: false},
+  //     {id: 1, done: false},
+  //     {id: 4, done: false},
+  //     {id: 2, done: false},
+  //     {id: 3, done: false},
+  //     {id: 5, done: false},
+  //     {id: 6, done: false}
+  //   ],
+  //   questions : [
+  //     {id: 1, attempt: 0, done: false},
+  //     {id: 4, attempt: 0, done: false},
+  //     {id: 2, attempt: 0, done: false},
+  //     {id: 3, attempt: 0, done: false},
+  //     {id: 5, attempt: 0, done: false},
+  //     {id: 6, attempt: 0, done: false},
+  //     {id: 7, attempt: 0, done: false}
+  //   ],   
+  //   currentStep : 0, 
+  //   points : 0   
+  // }, { 
     salt : "537903139354", 
     hashed_password : "3a77198e634fa0b936943f806d5862011d7de37a", 
     email : "admin", 

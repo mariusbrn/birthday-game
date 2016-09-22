@@ -6,13 +6,13 @@
 	      <span class="card-title">Félicitation !!</span>
 				{{#switch next.id}}
 				  {{#case 1}}
-				    <p>C'est que tu ne réfléchis pas qu'avec tes pieds!</p>
+				    <p>Parfait tu es paré pour l'aventure.</p>
 				  {{/case}}
 				  {{#case 2}}
 				    <p>Tu es moins bête qu'il n'y paraît.</p>
 				  {{/case}}
 				  {{#case 3}}
-				    <p>Tu es moins bête qu'il n'y paraît.</p>
+				    <p>C'est que tu ne réfléchis pas qu'avec tes pieds!</p>
 				  {{/case}}
 				  {{#case 4}}
 				    <p>Tu es moins bête qu'il n'y paraît.</p>
@@ -32,7 +32,25 @@
 					  {{/case}}			  				  				  
 					{{/switch}} 	      
 	      </div>
-	      <p></p>
+	      
+	      {{#switch next.id}}
+				  {{#case 1}}
+				    <p></p>
+				  {{/case}}
+				  {{#case 2}}
+				   <p><em>"La culture c'est comme la confiture, moins on en a, plus on l'étale."</em></p>
+				  {{/case}}
+				  {{#case 3}}
+				    <p><em>"Si l'amour te tourne le dos, touche lui le cul."</em></p>
+				  {{/case}}
+				  {{#case 4}}
+				    <p><em>"Pour reconnaître que l'on est pas intelligent, il faut l'être."</em></p>
+				  {{/case}}
+				  {{#case 5}}
+				    <p><em>"Comme le dit souvent ma copine cocaïnomane: tire un trait, tu y verras plus clair"</em></p>
+				  {{/case}}				  				  				  
+				{{/switch}} 
+	      </em></p>
 	      <br>
 	    </div>
 	    <div class="card-action center-align">
