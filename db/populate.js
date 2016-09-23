@@ -84,8 +84,8 @@ db.users.insert([{
     currentStep : 0, 
     points : 0   
   }, {
-    salt : "256110876995", 
-    hashed_password : "e866c4a3db6e79f8679c18230ccd8e430810daad", 
+    salt : "965644650821", 
+    hashed_password : "ec0f6662208661f523c541bec300b0c6f5a45bea", 
     email : "equipe4", 
     teamname : "", 
     name : "equipe 4",
