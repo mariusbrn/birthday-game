@@ -15,7 +15,10 @@ $(function () {
       } else {
         $('.codeError').show();
       }
-    });
+    })
+    .fail(function () {
+      window.location = '/login';
+    });   
   });
 
   // ANSWER
@@ -63,7 +66,10 @@ $(function () {
       dataType: 'json',
       data: { answer: answer, _csrf: token }
     })
-    .done(cb);     
+    .done(cb)
+    .fail(function () {
+      window.location = '/login';
+    });
   }
 
   // CHART

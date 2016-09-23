@@ -48,9 +48,9 @@ db.users.insert([{
     ],
     questions : [
       {id: 1, attempt: 0, done: false},
-      {id: 4, attempt: 0, done: false},
       {id: 2, attempt: 0, done: false},
       {id: 3, attempt: 0, done: false},
+      {id: 4, attempt: 0, done: false},
       {id: 5, attempt: 0, done: false},
       {id: 6, attempt: 0, done: false},
       {id: 7, attempt: 0, done: false}
@@ -74,9 +74,9 @@ db.users.insert([{
     ],
     questions : [
       {id: 1, attempt: 0, done: false},
-      {id: 4, attempt: 0, done: false},
       {id: 2, attempt: 0, done: false},
       {id: 3, attempt: 0, done: false},
+      {id: 4, attempt: 0, done: false},
       {id: 5, attempt: 0, done: false},
       {id: 6, attempt: 0, done: false},
       {id: 7, attempt: 0, done: false}
@@ -100,9 +100,9 @@ db.users.insert([{
     ],
     questions : [
       {id: 1, attempt: 0, done: false},
-      {id: 4, attempt: 0, done: false},
       {id: 2, attempt: 0, done: false},
       {id: 3, attempt: 0, done: false},
+      {id: 4, attempt: 0, done: false},
       {id: 5, attempt: 0, done: false},
       {id: 6, attempt: 0, done: false},
       {id: 7, attempt: 0, done: false}
@@ -219,6 +219,7 @@ db.questions.insert([
     sentence: 'Ouf!!!! Enfin une baronne intellectuelle', 
     question: 'Quel est le nom de la baronne qui était romancière, auteur dramatique, féministe, connue, ayant pris un pseudonyme masculin et dont une de ses œuvres se nomme "Pauline"?', 
     answer: 'dudevant',
+    answerImg: 'george-sand.png',
     hint: 'baronne ________'    
   }, {
     id: 6, 
@@ -229,7 +230,7 @@ db.questions.insert([
       'Voler sur des boulets de canon', 
       'Se sortir des sables mouvants en se soulevant par les cheveux',
       'Raconter des craques', 
-      'Pour avoir donné son nom à une maladie pshychiatrique',
+      'Avoir donné son nom à une maladie pshychiatrique',
       'Toutes ces réponses' 
     ],     
     answer: 'toutes ces réponses',
@@ -238,7 +239,7 @@ db.questions.insert([
     id: 7, 
     type: 'choice', 
     sentence: '', 
-    question: 'Quel classement des titres de noblesse par ordre d\'importance (du plus important au moins important) est il inexact?',
+    question: 'Lequel de ces classements par ordre d\'importance des titres de noblesse (du plus important au moins important) est inexact?',
     choices: [
       'baron, dieu, licorne, petit poney ', 
       'prince, marquis, baron, écuyer, châtelain, ', 

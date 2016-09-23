@@ -24,7 +24,7 @@ exports.enigm = function (req, res) {
   const enigmIdForUser = user.enigms[req.user.currentStep].id;
   res.render('enigms/' + enigmIdForUser, {
     title: 'Enigme ' + id,
-    id
+    id : enigmIdForUser
   });
 };
 
